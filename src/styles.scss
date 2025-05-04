@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.topRight {
+    top: 1rem;
+    right: 1rem;
+}
+
+.topLeft {
+    top: 1rem;
+    left: 1rem;
+}
+
+.bottomRight {
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.bottomLeft {
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.columnFlex {
+    @extend .flex;
+    flex-direction: column;
+}
+
+.centerFlex {
+    @extend .flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+.fullwidth {
+    width: 100vw;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

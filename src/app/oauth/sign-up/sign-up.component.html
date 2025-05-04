@@ -1,0 +1,35 @@
+<form [formGroup]="signUpForm">
+    <h2>{{form().title}}</h2>
+    <div formArrayName="fields">
+        @for (field of fields.controls; track $index; let i = $index) {
+        <div class="columnFlex">
+            <div class="flex">
+                <mat-form-field style="width: 100%;">
+                    <mat-label>{{form().fields[i].title}}</mat-label>
+                    <input matInput id="field-{{ i }}" [matTooltip]="form().fields[i].description" 
+                        [type]="form().fields[i].type=='NEW_PASSWORD'?hide() ? 'password' : 'text':'text'"
+                        [formControlName]="i" />
+                    @if(form().fields[i].type=='NEW_PASSWORD'){
+                    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide()">
+                        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    }
+
+                </mat-form-field>
+                @if(form().fields[i].type=='NEW_PASSWORD'){
+                <button mat-icon-button [matTooltip]="form().fields[i].info??''"> <mat-icon>info</mat-icon></button>
+                }
+            </div>
+
+
+            @if(field.invalid && field.touched){
+            <p class="validationError">{{form().fields[i].errorMessage}}</p>
+            }
+        </div>
+
+        }
+    </div>
+
+    <button type="submit" mat-flat-button>{{form().submitLabel}}</button>
+</form>
