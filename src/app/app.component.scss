@@ -1,6 +1,30 @@
+@use 'shared/styles/themes';
 .navBar {
     justify-content: space-evenly;
-    width: 15rem;
-    height: 3rem;
-    background-color: white;
+    align-items: center;
+    width: 25rem;
+   flex-direction: row-reverse;
+
+    &.topRight{
+   flex-direction: row;
+    }
+}
+
+
+
+.langToggler{
+    scale: 0.7;
+}
+
+:host ::ng-deep .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    color: #0f073f;
+    background-color: #a7afff;
+}
+
+mat-button-toggle,:host ::ng-deep .mat-internal-form-field>label {
+    color: var(--textColor);
+}
+
+:host ::ng-deep .mdc-switch__track::after{
+    background: #a7afff !important;
 }

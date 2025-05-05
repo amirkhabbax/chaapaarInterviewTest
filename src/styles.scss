@@ -1,5 +1,16 @@
-body{
-    margin: 0;
+@use 'app/shared/styles/themes';
+@font-face {
+    font-family: 'Estedad';
+    src: url(app/assets/Estedad-Light.woff) format("truetype");
+}
+
+html * {
+    font-family: Roboto, 'Estedad', "Helvetica Neue", sans-serif !important;
+
+    & .material-icons {
+        font-family: Material Icons !important;
+
+    }
 }
 
 .fixed {
@@ -22,6 +33,10 @@ body{
 .topLeft {
     top: 1rem;
     left: 1rem;
+    &.topRight{
+        right: 1rem;
+        left: auto;
+    }
 }
 
 .bottomRight {
@@ -49,6 +64,11 @@ body{
     align-items: center;
 }
 
+.baselineFlex {
+    @extend .flex;
+    align-items: baseline;
+}
+
 .fullheight {
     height: 100vh;
 }
@@ -56,5 +76,23 @@ body{
 .fullwidth {
     width: 100vw;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+    font-size: 100% ;
+}
+
+body {
+    margin: 0;
+    color: var(--textColor) ;
+
+}
+
+.persian{
+    direction: rtl;
+}
+
+.material-icons{
+    color: var(--iconColor);
+}

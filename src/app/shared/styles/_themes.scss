@@ -1,0 +1,30 @@
+/*
+ * Theme definitions
+ */
+
+[data-layout-color="dark"] {
+  --backgroundColor: #242446;
+  --textColor: #fff;
+  --backgroundTransparentColor: #0e042a7d;
+  --errorColor: #f84684;
+  --errorColorHover : #ee0053;
+  --fieldBackground: #5b5d83;
+  --fieldTextColor: #b8bbee;
+  --fieldTextColorHover: #c4c7ff;
+  --iconColor: #a2a2d3;
+  --fieldOverlayColor : #8000ff;
+}
+
+[data-layout-color="light"] {
+  --backgroundColor: #ceceff;
+  --textColor: #000;
+  --backgroundTransparentColor: #f2eefc80;
+  --errorColor: #ff2525;
+  --errorColorHover : #e00000;
+  --fieldBackground: #f5f5f5;
+  --fieldTextColor: #777777;
+  --fieldTextColorHover: #6b6b6b;
+  --iconColor: #6161a1;
+  --fieldOverlayColor : #3923ff;
+}
+
