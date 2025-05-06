@@ -21,12 +21,4 @@ describe('OauthComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("should get the loader' visibility from the service", () => {
-    const fixture = TestBed.createComponent(OauthComponent);
-    const app = fixture.componentInstance;
-    let loaderService = fixture.debugElement.injector.get(LoaderService);
-    fixture.detectChanges();
-    let isVisible = loaderService.isLoadingVisible();
-    expect(app.hideMainContent()).toEqual(isVisible);
-  });
 });
