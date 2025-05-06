@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { LoaderService } from '../shared/services/loader.service';
 
 @Component({
   selector: 'app-oauth',
@@ -8,5 +9,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './oauth.component.scss'
 })
 export class OauthComponent {
-
+  private _loaderService = inject(LoaderService);
+  hideMainContent = computed(() => {return this._loaderService.isLoadingVisible()});
 }
