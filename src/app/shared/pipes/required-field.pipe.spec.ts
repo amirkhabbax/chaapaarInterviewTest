@@ -5,4 +5,9 @@ describe('RequiredFieldPipe', () => {
     const pipe = new RequiredFieldPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('transforms "anything" to "anything*"', () => {
+    const pipe = new RequiredFieldPipe();
+    expect(pipe.transform('anything')).toBe('anything*');
+  });
 });
