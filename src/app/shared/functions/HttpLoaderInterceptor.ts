@@ -9,9 +9,11 @@ export function HttpLoaderInterceptor(
 ): Observable<HttpEvent<unknown>> {
   let loaderService = inject(LoaderService);
   loaderService.show();
+  document.getElementById('mainContent')?.classList.add('hide');
   return next(req).pipe(
     finalize(() => {
       loaderService.hide();
+      document.getElementById('mainContent')?.classList.remove('hide');
     })
   );
 }

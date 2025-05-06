@@ -100,8 +100,8 @@ export class SignUpComponent {
           ])
         )
       );
-
     });
+
     if(this.fields.length){
       this.fields.controls[
         this.fields.length -2
