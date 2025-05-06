@@ -4,6 +4,18 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class LoaderService {
-  isLoadingVisible = signal(false);
+  private _isLoadingVisible = signal(false);
   constructor() {}
+
+  get isLoadingVisible(){
+    return this._isLoadingVisible;
+  }
+
+  hide(){
+    this._isLoadingVisible.set(false);
+  }
+
+  show(){
+    this._isLoadingVisible.set(true);
+  }
 }

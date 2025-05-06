@@ -8,12 +8,10 @@ export function HttpLoaderInterceptor(
   next: HttpHandlerFn
 ): Observable<HttpEvent<unknown>> {
   let loaderService = inject(LoaderService);
-  loaderService.isLoadingVisible.set(true);
+  loaderService.show();
   return next(req).pipe(
     finalize(() => {
-      setTimeout(() => {
-        loaderService.isLoadingVisible.set(false);
-      }, 1);
+       loaderService.hide();
     })
   );
 }

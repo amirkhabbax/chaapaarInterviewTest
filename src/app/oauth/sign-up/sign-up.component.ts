@@ -119,7 +119,6 @@ export class SignUpComponent {
           this.confirmPasswordChanged(formData);
         });
     }
-
   }
 
   clickEvent(event: MouseEvent) {
@@ -145,7 +144,7 @@ export class SignUpComponent {
       });
     }
     else{
-      //TODO 
+      //throw new Error("Form is not valid");
     }
   }
 }
