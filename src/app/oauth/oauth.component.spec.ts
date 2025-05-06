@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OauthComponent } from './oauth.component';
-import { LoaderService } from '../shared/services/loader.service';
 
 describe('OauthComponent', () => {
   let component: OauthComponent;
