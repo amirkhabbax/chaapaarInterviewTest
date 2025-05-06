@@ -145,7 +145,7 @@ export class SignUpComponent {
       });
     }
     else{
-      //Todo
+      //TODO 
     }
   }
 }

@@ -11,7 +11,9 @@ export function HttpLoaderInterceptor(
   loaderService.isLoadingVisible.set(true);
   return next(req).pipe(
     finalize(() => {
-      loaderService.isLoadingVisible.set(false);
+      setTimeout(() => {
+        loaderService.isLoadingVisible.set(false);
+      }, 1);
     })
   );
 }
