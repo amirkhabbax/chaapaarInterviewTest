@@ -28,6 +28,9 @@ html * {
 .topRight {
     top: 1rem;
     right: 1rem;
+    @media (max-width:767px) {
+        right: 0rem;
+    }
 }
 
 .topLeft {
@@ -35,18 +38,30 @@ html * {
     left: 1rem;
     &.topRight{
         right: 1rem;
+        @media (max-width:767px) {
+            right: 0rem;
+        }
         left: auto;
+    }
+    @media (max-width:767px) {
+        left: 0rem;
     }
 }
 
 .bottomRight {
     bottom: 1rem;
     right: 1rem;
+    @media (max-width:767px) {
+        right: 0rem;
+    }
 }
 
 .bottomLeft {
     bottom: 1rem;
     left: 1rem;
+    @media (max-width:767px) {
+        left: 0rem;
+    }
 }
 
 .flex {

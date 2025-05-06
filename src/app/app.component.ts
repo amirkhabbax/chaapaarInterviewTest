@@ -4,7 +4,6 @@ import {
   Inject,
   inject,
   signal,
-  ViewEncapsulation,
 } from '@angular/core';
 import {
   MatSlideToggleChange,
