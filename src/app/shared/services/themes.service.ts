@@ -6,8 +6,12 @@ import { Injectable, signal } from '@angular/core';
 export class ThemesService {
   constructor() {}
 
-  isDarkMode = signal(false);
+  private _isDarkMode = signal(false);
   toggleDarkMode() {
-    this.isDarkMode.update((current) => !current);
+    this._isDarkMode.update((current) => !current);
+  }
+
+  get isDarkMode() {
+    return this._isDarkMode;
   }
 }

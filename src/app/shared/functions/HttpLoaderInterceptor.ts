@@ -11,7 +11,7 @@ export function HttpLoaderInterceptor(
   loaderService.show();
   return next(req).pipe(
     finalize(() => {
-       loaderService.hide();
+      loaderService.hide();
     })
   );
 }

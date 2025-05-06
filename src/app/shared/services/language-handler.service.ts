@@ -4,10 +4,14 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class LanguageHandlerService {
-  public langauge = signal('fa');
+  private _langauge = signal('fa');
   constructor() {}
 
   changeLanguage(newLanguage: string) {
-    this.langauge.set(newLanguage);
+    this._langauge.set(newLanguage);
+  }
+
+  get langauge() {
+    return this._langauge;
   }
 }

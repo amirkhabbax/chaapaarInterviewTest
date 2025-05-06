@@ -13,9 +13,6 @@ export class GlobalErrorHandlerComponent extends ErrorHandler {
   private languageHandlerService = inject(LanguageHandlerService);
   private themesService = inject(ThemesService);
   override handleError(error: any): void {
-    // if (!(error instanceof HttpErrorResponse)) {
-    //   error = error.rejction;
-    // }
 
     let errorMessage: string =
       error?.message ??
