@@ -1,8 +1,8 @@
 <router-outlet />
 <div id="navBar" class="fixed topLeft topRight navBar flex">
 
-        <button mat-icon-button (click)="increaseTextSize()"><mat-icon>text_increase</mat-icon></button>
-        <button mat-icon-button (click)="decreaseTextSize()"><mat-icon>text_decrease</mat-icon></button>
+        <button mat-icon-button [matTooltip]="isPersian?'افزایش سایز فونت':'Increase text size'" (click)="increaseTextSize()"><mat-icon>text_increase</mat-icon></button>
+        <button mat-icon-button [matTooltip]="isPersian?'کاهش سایز فونت':'Decrease text size'" (click)="decreaseTextSize()"><mat-icon>text_decrease</mat-icon></button>
         <mat-button-toggle-group name="language" aria-label="Language" (change)="languageChanged($event)" class="langToggler">
             <mat-button-toggle value="en">{{isPersian?'انگلیسی':'English'}}</mat-button-toggle>
             <mat-button-toggle value="fa" [checked]="true">{{isPersian?'پارسی':'Persian'}}</mat-button-toggle>
@@ -12,3 +12,6 @@
 
 
 </div>
+@if(showLoader()){
+<app-loading-line />
+}

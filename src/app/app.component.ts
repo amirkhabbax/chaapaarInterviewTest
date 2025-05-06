@@ -1,5 +1,6 @@
 import {
   Component,
+  computed,
   effect,
   Inject,
   inject,
@@ -16,10 +17,13 @@ import { ThemesService } from './shared/services/themes.service';
 import { DOCUMENT } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { LoaderService } from './shared/services/loader.service';
+import { LoadingLineComponent } from './shared/components/loading-line-component/loading-line.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatSlideToggleModule, MatButtonToggleModule,MatIconModule,MatButtonModule],
+  imports: [RouterOutlet, MatSlideToggleModule, MatButtonToggleModule,MatIconModule,MatButtonModule, MatTooltipModule, LoadingLineComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -27,7 +31,9 @@ export class AppComponent {
   title = 'chaapaarInterviewTest';
   private _languageHandlerService = inject(LanguageHandlerService);
   private _themesService = inject(ThemesService);
+  private _loaderService = inject(LoaderService);
   fontSize = signal(100);
+  showLoader = computed(() => {return this._loaderService.isLoadingVisible()});
 
   constructor(@Inject(DOCUMENT) private _document: any) {
     effect(() => {

@@ -38,10 +38,10 @@ html * {
     left: 1rem;
     &.topRight{
         right: 1rem;
+        left: unset;
         @media (max-width:767px) {
             right: 0rem;
         }
-        left: auto;
     }
     @media (max-width:767px) {
         left: 0rem;
