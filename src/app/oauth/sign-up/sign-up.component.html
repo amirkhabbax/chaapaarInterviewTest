@@ -3,7 +3,7 @@
     <div class="fields" formArrayName="fields">
         @for (field of fields.controls; track $index; let i = $index) {
         <mat-form-field>
-            <mat-label>{{form().fields[i].required?form().fields[i].title+'*':form().fields[i].title}}</mat-label>
+            <mat-label>{{form().fields[i].title | requiredField}}</mat-label>
             <input matInput id="field-{{ i }}" [matTooltip]="form().fields[i].description"
                 [type]="form().fields[i].type!='TEXT' ?hide() ? 'password' : 'text':'text'" [formControlName]="i" />
             <ng-container matSuffix>

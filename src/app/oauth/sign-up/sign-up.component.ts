@@ -16,6 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { GetFormService } from './get-form.service';
 import { PostRequestBody } from '../../models/PostRequestBody.main';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { RequiredFieldPipe } from "../../shared/pipes/required-field.pipe";
 
 @Component({
   selector: 'app-sign-up',
@@ -26,7 +27,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
-  ],
+    RequiredFieldPipe
+],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })
