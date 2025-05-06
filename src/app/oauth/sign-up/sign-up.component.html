@@ -8,11 +8,11 @@
                 [type]="form().fields[i].type!='TEXT' ?hide() ? 'password' : 'text':'text'" [formControlName]="i" />
             <ng-container matSuffix>
                 @if(form().fields[i].type=='NEW_PASSWORD'){
-                <button mat-icon-button (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                <button type="button" mat-icon-button (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide()">
                     <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
-                <button mat-icon-button [matTooltip]="form().fields[i].info??''"> <mat-icon>info</mat-icon></button>
+                <button type="button" mat-icon-button [matTooltip]="form().fields[i].info??''"> <mat-icon>info</mat-icon></button>
                 }
             </ng-container>
 
